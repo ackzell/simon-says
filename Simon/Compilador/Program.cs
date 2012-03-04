@@ -14,6 +14,9 @@ namespace Compilador
             Program programa = new Program();
         }
 
+        /**
+         * Constructor de la clase
+         * */
         Program()
         {
             Console.WriteLine("Hola mundo");
