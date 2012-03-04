@@ -19,7 +19,6 @@ namespace Compilador
          * */
         Program()
         {
-            Console.WriteLine("Hola mundo");
             // Leer archivos
             StreamReader sr = new StreamReader("programa.itc");
             programa = new StringBuilder();
