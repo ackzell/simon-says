@@ -259,7 +259,7 @@ namespace CodeBoxControl.Decorations
               ,"IsForeignKey", "ThisKey", "OtherKey", "IsDbGenerated" ,"UpdateCheck" };
               ds.BaseDecorations.Add(RedWords);
 
-              DoubleQuotedDecoration quoted = new DoubleQuotedDecoration();
+              SingleQuotedDecoration quoted = new SingleQuotedDecoration();
               quoted.Brush = new SolidColorBrush(Colors.Blue);
               ds.BaseDecorations.Add(quoted);
 
@@ -413,6 +413,66 @@ namespace CodeBoxControl.Decorations
 
       #endregion 
 
+     #region ITC Language
+
+     public static DecorationScheme ITCLang
+     {
+         get
+         {
+             DecorationScheme ds = new DecorationScheme();
+
+             ds.Name = "ITC";
+
+             MultiRegexWordDecoration BlueWords = new MultiRegexWordDecoration();
+             BlueWords.Brush = new SolidColorBrush(Colors.Blue);
+             BlueWords.Words = new List<string>() { "Inicio", "Fin", "Repite", "Enciende"};
+             ds.BaseDecorations.Add(BlueWords);
+
+             StringDecoration quotationMarks = new StringDecoration();
+             quotationMarks.String = "\"";
+             quotationMarks.Brush = new SolidColorBrush(Colors.Gray);
+             ds.BaseDecorations.Add(quotationMarks);
+
+             SingleQuotedDecoration quoted = new SingleQuotedDecoration();
+             quoted.Brush = new SolidColorBrush(Colors.Gray);
+             ds.BaseDecorations.Add(quoted);
+
+             
+
+             MultiStringDecoration greenStrings = new MultiStringDecoration();
+             greenStrings.Brush = new SolidColorBrush(Colors.Green);
+             greenStrings.Strings = new List<string>() { "(", ")","=","!","*", "+"};
+             ds.BaseDecorations.Add(greenStrings);
+
+
+
+             //RegexDecoration quotedText = new RegexDecoration();
+             //quotedText.Brush = new SolidColorBrush(Colors.Brown);
+             //quotedText.RegexString = "(?s:\".*?\")";
+             //ds.BaseDecorations.Add(quotedText);
+
+
+             ////Color single line comments green
+             //RegexDecoration singleLineComment = new RegexDecoration();
+             //singleLineComment.DecorationType = EDecorationType.TextColor;
+             //singleLineComment.Brush = new SolidColorBrush(Colors.Green);
+             //singleLineComment.RegexString = "//.*";
+             //ds.BaseDecorations.Add(singleLineComment);
+
+             ////Color multiline comments green
+             //RegexDecoration multiLineComment = new RegexDecoration();
+             //multiLineComment.DecorationType = EDecorationType.TextColor;
+             //multiLineComment.Brush = new SolidColorBrush(Colors.Green);
+             //multiLineComment.RegexString = @"(?s:/\*.*?\*/)";
+             //ds.BaseDecorations.Add(multiLineComment);
+
+             return ds;
+
+         }
+     }
+
+
+     #endregion
 
   }
 }

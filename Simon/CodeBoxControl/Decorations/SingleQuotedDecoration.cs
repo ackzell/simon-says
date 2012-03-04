@@ -6,9 +6,9 @@ using System.Text.RegularExpressions;
 
 namespace CodeBoxControl.Decorations
 {
-    class DoubleQuotedDecoration : Decoration 
+    class SingleQuotedDecoration : Decoration 
     {
-        static Regex rx = new Regex ("\".*?\"");
+        static Regex rx = new Regex ("\'.*?\'");
         public override List<Pair> Ranges(string Text)
         {
 

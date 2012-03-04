@@ -2,8 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:CodeBoxControl;assembly=CodeBoxControl"
+        
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <local:CodeBox></local:CodeBox>
+        <local:CodeBox TextWrapping="NoWrap" DecorationScheme="ITC"> </local:CodeBox>
     </Grid>
 </Window>
