@@ -92,6 +92,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeBoxControl\CodeBoxControl.csproj">
+      <Project>{FAFC1291-82F4-4A3A-B70F-111DBF2EC194}</Project>
+      <Name>CodeBoxControl</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
