@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compilador", "Compilador\Compilador.csproj", "{F02DC40E-5AFC-43A0-9869-B0AEDE0B90EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCide", "ITCide\ITCide.csproj", "{1EA42E67-AA26-4499-B693-C73302D0CB5D}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,10 @@ Global
 		{F02DC40E-5AFC-43A0-9869-B0AEDE0B90EB}.Debug|x86.Build.0 = Debug|x86
 		{F02DC40E-5AFC-43A0-9869-B0AEDE0B90EB}.Release|x86.ActiveCfg = Release|x86
 		{F02DC40E-5AFC-43A0-9869-B0AEDE0B90EB}.Release|x86.Build.0 = Release|x86
+		{1EA42E67-AA26-4499-B693-C73302D0CB5D}.Debug|x86.ActiveCfg = Debug|x86
+		{1EA42E67-AA26-4499-B693-C73302D0CB5D}.Debug|x86.Build.0 = Debug|x86
+		{1EA42E67-AA26-4499-B693-C73302D0CB5D}.Release|x86.ActiveCfg = Release|x86
+		{1EA42E67-AA26-4499-B693-C73302D0CB5D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
