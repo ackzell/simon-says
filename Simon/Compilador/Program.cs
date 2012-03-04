@@ -26,7 +26,9 @@ namespace Compilador
             String line; 
             line = sr.ReadLine();
             
-
+            /**
+             * Este es un ciclo raro
+             **/
             while (line != null)
             {
                 for (int x = 0; x < line.Length; x++)
