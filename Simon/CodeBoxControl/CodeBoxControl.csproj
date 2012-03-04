@@ -86,6 +86,7 @@
     <Compile Include="CodeBox.cs" />
     <Compile Include="CodeBoxApplicationSettings.cs" />
     <Compile Include="CodeBoxSettings.cs" />
+    <Compile Include="Decorations\SingleQuotedDecoration.cs" />
     <Compile Include="Decorations\Decoration.cs" />
     <Compile Include="Decorations\DecorationScheme.cs" />
     <Compile Include="Decorations\DecorationSchemes.cs" />

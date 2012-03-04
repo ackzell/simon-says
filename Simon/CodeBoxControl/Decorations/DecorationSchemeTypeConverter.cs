@@ -49,7 +49,10 @@ namespace CodeBoxControl.Decorations
               return DecorationSchemes.Xaml;
 
           }
-
+          else if (testString.ToUpper() == "ITC")
+          {
+              return DecorationSchemes.ITCLang;
+          }
 
       }
       return base.ConvertFrom(context, culture, value);
