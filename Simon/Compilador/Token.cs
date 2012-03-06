@@ -9,6 +9,13 @@ namespace Compilador
     {
         String token;
         int tipo;
+        /*
+         * 0 - Numero
+         * 1 - Id
+         * 2 - Agrupador
+         * 3 - Terminador
+         * 4 - Asignador
+         */
         public Token(string s, int t)
         {
             token = s;
@@ -23,6 +30,24 @@ namespace Compilador
         public int getTipo()
         {
             return tipo;
+        }
+
+        public String getNombre()
+        {
+            switch (tipo)
+            {
+                case 0:
+                    return "Numero";
+                case 1:
+                    return "Caracter";
+                case 2:
+                    return "Agrupador";
+                case 3:
+                    return "Terminador";
+                case 4:
+                    return "Asignador";
+            }
+            return "ND";
         }
     }
 }

@@ -41,8 +41,10 @@ namespace Compilador
 
             foreach(Token token in tokens)
             {
-                Console.WriteLine(token.getTipo()+" "+token.getToken());
+                Console.WriteLine(token.getNombre()+", "+token.getToken());
             }
+
+            Console.ReadLine();
 
             /*
              * StreamWriter sw = new StreamWriter("ejecutable.o");
@@ -78,13 +80,44 @@ namespace Compilador
                     } while (esNumero(programa[pos]) || esCaracter(programa[pos]));
                     lista.Add(new Token(res, 1));
                 }
-                else
+                else if(esAgrupador(programa[pos]))
                 {
                     lista.Add(new Token(programa[pos].ToString(), 2));
                     pos++;
                 }
+                else if (esTerminador(programa[pos]))
+                {
+                    lista.Add(new Token(programa[pos].ToString(), 3));
+                    pos++;
+                }
+                else if (esAsignador(programa[pos]))
+                {
+                    lista.Add(new Token(programa[pos].ToString(), 4));
+                    pos++;
+                }
             }
             return lista;
+        }
+
+        private bool esAsignador(char p)
+        {
+            if (p == '=')
+                return true;
+            return false;
+        }
+
+        private bool esTerminador(char p)
+        {
+            if (p == '!')
+                return true;
+            return false;
+        }
+
+        private bool esAgrupador(char p)
+        {
+            if (p == ')' || p == '(')
+                return true;
+            return false;
         }
 
         private bool esCaracter(char c)
