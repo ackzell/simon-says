@@ -41,7 +41,7 @@ namespace Compilador
 
             foreach(Token token in tokens)
             {
-                Console.WriteLine(token.getNombre()+", "+token.getToken());
+                Console.WriteLine(token.getToken() + ", " + token.getNombre());
             }
 
             Console.ReadLine();
@@ -93,6 +93,11 @@ namespace Compilador
                 else if (esAsignador(programa[pos]))
                 {
                     lista.Add(new Token(programa[pos].ToString(), 4));
+                    pos++;
+                }
+                else
+                {
+                    lista.Add(new Token(programa[pos].ToString(), 5));
                     pos++;
                 }
             }

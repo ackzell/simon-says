@@ -39,13 +39,15 @@ namespace Compilador
                 case 0:
                     return "Numero";
                 case 1:
-                    return "Caracter";
+                    return "Identificador";
                 case 2:
                     return "Agrupador";
                 case 3:
                     return "Terminador";
                 case 4:
                     return "Asignador";
+                case 5:
+                    return "Signo";
             }
             return "ND";
         }
