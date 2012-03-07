@@ -5,15 +5,16 @@
         
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="ITCeditor" x:Class="ITCide.MainWindow"
         
-        Title="ITCeditor" Height="350" Width="525">
+        Title="ITCeditor" Height="395" Width="879">
         
     <DockPanel>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <Button Click="NuevoArchivo">Nuevo</Button>
-                <Button Click="AbrirArchivo">Abrir</Button>
+               <!-- <Button Click="NuevoArchivo">Nuevo</Button> -->
+                <!--<Button Click="AbrirArchivo">Abrir</Button>-->
                 <Button Click="GuardarArchivo">Guardar</Button>
-                <Button Click="GuardarComo">Guardar como</Button>
+                <Button Click="Analizador">Analizador Léxico</Button>
+                <!--<Button Click="GuardarComo">Guardar como</Button>-->
             </ToolBar>
         </ToolBarTray>
        <!-- <StatusBar DockPanel.Dock="Bottom" >
@@ -22,7 +23,26 @@
             <TextBlock>Field 2</TextBlock>
         </StatusBar>
         -->
-        <local:CodeBox TextWrapping="NoWrap" DecorationScheme="ITC" FontFamily="Consolas" FontSize="14" Height="283" Width="503" />
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock DockPanel.Dock="Top">
+                    Escribe a continuación tu código. 
+                    <LineBreak />
+                    (el analizador léxico no encuentra palabras reservadas aunque el editor las distinga)
+                </TextBlock>
+
+                <local:CodeBox Name="itcCodebox" TextWrapping="NoWrap" DecorationScheme="ITC" FontFamily="Consolas" FontSize="14" Height="308" Width="499" />
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical">
+                <TextBlock Width="350" Height="300" Name="lexResponse">
+                    
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        
+        
     </DockPanel>
 
 </Window>
