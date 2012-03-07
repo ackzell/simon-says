@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Diagnostics;
 
 namespace ITCide
 {
@@ -38,11 +39,11 @@ namespace ITCide
         private void GuardarArchivo(object sender, RoutedEventArgs e)
         {
 
-
-            FileStream fs = new FileStream("c:\\test.txt", FileMode.Append, FileAccess.Write);
+            FileStream fs = new FileStream("../../../Compilador/bin/debug/programa.itc", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            Console.WriteLine("Enter the text which you want to write to the file");
-            string str = Console.ReadLine();
+            //Console.WriteLine("Enter the text which you want to write to the file");
+            //string str = Console.ReadLine();
+            string str = itcCodebox.Text;
             sw.WriteLine(str);
             sw.Flush();
             sw.Close();
@@ -54,6 +55,24 @@ namespace ITCide
 
         }
 
+        private void Analizador(object sender, RoutedEventArgs e)
+        {
+            // Start the child process.
+            Process p = new Process();
+            // Redirect the output stream of the child process.
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.FileName = "../../../Compilador/bin/debug/compilador.exe";
+            p.Start();
+            // Do not wait for the child process to exit before
+            // reading to the end of its redirected stream.
+             p.WaitForExit();
+            // Read the output stream first and then wait.
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+
+            lexResponse.Text = output;
+        }
       
     }
 }
