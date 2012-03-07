@@ -6,16 +6,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="ITCeditor" x:Class="ITCide.MainWindow"
         
         Title="ITCeditor" Height="350" Width="525">
-    <Grid>
-    	<Grid.ColumnDefinitions>
-    		<ColumnDefinition/>
-    	</Grid.ColumnDefinitions>
-        <local:CodeBox TextWrapping="NoWrap" DecorationScheme="ITC" Margin="162,0,0,0"/>
-        <StackPanel HorizontalAlignment="Left" Width="158">
-            <Button>Nuevo</Button>
-            <Button>Abrir</Button>
-            <Button>Guardar</Button>
-            <Button>Guardar como</Button>
-        </StackPanel>
-    </Grid>
+        
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Click="NuevoArchivo">Nuevo</Button>
+                <Button Click="AbrirArchivo">Abrir</Button>
+                <Button Click="GuardarArchivo">Guardar</Button>
+                <Button Click="GuardarComo">Guardar como</Button>
+            </ToolBar>
+        </ToolBarTray>
+       <!-- <StatusBar DockPanel.Dock="Bottom" >
+            <TextBlock>Col: 1</TextBlock>
+            <Separator/>
+            <TextBlock>Field 2</TextBlock>
+        </StatusBar>
+        -->
+        <local:CodeBox TextWrapping="NoWrap" DecorationScheme="ITC" FontFamily="Consolas" FontSize="14" Height="283" Width="503" />
+    </DockPanel>
+
 </Window>

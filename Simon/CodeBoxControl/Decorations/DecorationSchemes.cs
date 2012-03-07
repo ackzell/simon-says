@@ -425,7 +425,7 @@ namespace CodeBoxControl.Decorations
 
              MultiRegexWordDecoration BlueWords = new MultiRegexWordDecoration();
              BlueWords.Brush = new SolidColorBrush(Colors.Blue);
-             BlueWords.Words = new List<string>() { "Inicio", "Fin", "Repite", "Enciende"};
+             BlueWords.Words = new List<string>() { "Inicio", "Fin", "Repite", "Enciende", "Veces"};
              ds.BaseDecorations.Add(BlueWords);
 
              StringDecoration quotationMarks = new StringDecoration();
@@ -437,14 +437,24 @@ namespace CodeBoxControl.Decorations
              quoted.Brush = new SolidColorBrush(Colors.Gray);
              ds.BaseDecorations.Add(quoted);
 
-             
-
              MultiStringDecoration greenStrings = new MultiStringDecoration();
              greenStrings.Brush = new SolidColorBrush(Colors.Green);
              greenStrings.Strings = new List<string>() { "(", ")","=","!","*", "+"};
              ds.BaseDecorations.Add(greenStrings);
 
+             //Color single line comments gray
+             RegexDecoration singleLineComment = new RegexDecoration();
+             singleLineComment.DecorationType = EDecorationType.TextColor;
+             singleLineComment.Brush = new SolidColorBrush(Colors.DimGray);
+             singleLineComment.RegexString = "//.*";
+             ds.BaseDecorations.Add(singleLineComment);
 
+             //Color multiline comments green
+             RegexDecoration multiLineComment = new RegexDecoration();
+             multiLineComment.DecorationType = EDecorationType.TextColor;
+             multiLineComment.Brush = new SolidColorBrush(Colors.DimGray);
+             multiLineComment.RegexString = @"(?s:/\*.*?\*/)";
+             ds.BaseDecorations.Add(multiLineComment);
 
              //RegexDecoration quotedText = new RegexDecoration();
              //quotedText.Brush = new SolidColorBrush(Colors.Brown);

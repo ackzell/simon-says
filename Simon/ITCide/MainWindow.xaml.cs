@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace ITCide
 {
@@ -23,5 +24,36 @@ namespace ITCide
         {
             InitializeComponent();
         }
+
+        private void NuevoArchivo(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void AbrirArchivo(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void GuardarArchivo(object sender, RoutedEventArgs e)
+        {
+
+
+            FileStream fs = new FileStream("c:\\test.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            Console.WriteLine("Enter the text which you want to write to the file");
+            string str = Console.ReadLine();
+            sw.WriteLine(str);
+            sw.Flush();
+            sw.Close();
+            fs.Close();
+        }
+
+        private void GuardarComo(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+      
     }
 }
