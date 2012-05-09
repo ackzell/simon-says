@@ -39,7 +39,7 @@ namespace ITCide
         private void GuardarArchivo(object sender, RoutedEventArgs e)
         {
 
-            FileStream fs = new FileStream("../../../Compilador/bin/debug/programa.itc", FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream("programa.itc", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
             //Console.WriteLine("Enter the text which you want to write to the file");
             //string str = Console.ReadLine();
@@ -50,7 +50,8 @@ namespace ITCide
             fs.Close();
         }
 
-        private void GuardarComo(object sender, RoutedEventArgs e)
+        
+        private void Ejecutar(object sender, RoutedEventArgs e)
         {
 
         }
@@ -62,7 +63,7 @@ namespace ITCide
             // Redirect the output stream of the child process.
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.FileName = "../../../Compilador/bin/debug/compilador.exe";
+            p.StartInfo.FileName = "ITCanalyzer.exe";
             p.Start();
             // Do not wait for the child process to exit before
             // reading to the end of its redirected stream.

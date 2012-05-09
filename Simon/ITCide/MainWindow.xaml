@@ -13,8 +13,8 @@
                <!-- <Button Click="NuevoArchivo">Nuevo</Button> -->
                 <!--<Button Click="AbrirArchivo">Abrir</Button>-->
                 <Button Click="GuardarArchivo">Guardar</Button>
-                <Button Click="Analizador">Analizador Léxico</Button>
-                <!--<Button Click="GuardarComo">Guardar como</Button>-->
+                <Button Click="Analizador">Analizador</Button>
+                
             </ToolBar>
         </ToolBarTray>
        <!-- <StatusBar DockPanel.Dock="Bottom" >
@@ -28,8 +28,6 @@
             <StackPanel Orientation="Vertical">
                 <TextBlock DockPanel.Dock="Top">
                     Escribe a continuación tu código. 
-                    <LineBreak />
-                    (el analizador léxico no encuentra palabras reservadas aunque el editor las distinga)
                 </TextBlock>
 
                 <local:CodeBox Name="itcCodebox" TextWrapping="NoWrap" DecorationScheme="ITC" FontFamily="Consolas" FontSize="14" Height="308" Width="499" />
